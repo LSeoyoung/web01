@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./week05/css/w3.css">
+    <title>Welcome to Seoyoung's web</title>
+    <style>
+        *{font-family:"맑은 고딕",Arial, Helvetica, sans-serif ;}
+        header h1{display:inline;}
+        ul {list-style:none;}
+        a {text-decoration: none;}
+        nav ul {
+                text-align: center; border-top: 3px solid black;
+                border-bottom: 3px solid black ; padding: 15px 10px;
+
+        }
+        nav ul li {
+                display:inline;
+                padding: 15px 20px;
+                letter-spacing: 5px;
+        }
+        nav ul :hover{
+                background-color: rgba(255, 192, 19, 0.836);
+        }
+        nav li a:hover {
+                color:white
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./images/춘식이(수정).jpg" alt="logo" width="100" height="70">
+        <h1>Seoyoung's site</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section>
+        <div id="photo">
+            <img src="./images/KakaoTalk_20210914_164241285.jpg" alt="Seoyoung" height="300" width="300"/>
+        <br>
+        <h2>▶My favorite music</h2>
+        <audio src="./media/water.mp3" controls></audio>
+        <br>
+        <h2>▶In Art gallery</h2>
+        <video controls autoplay loop src="./media/Art gallery.mp4" width="50%" height="50%"></video>
+        <br>
+        <h2>▶My favorite Youtube clip</h2>
+        <hr>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/2kWfWo8_7vA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <hr>
+        <iframe src="./start.html" frameborder="0" width="70%" height="240px"></iframe>
+        </div>
+        <div id="profile">
+           <h2>Seoyoung profile</h2>
+           <table border="1">
+               <tr>
+                   <th>일자</th>
+                   <th>내용</th>
+                   <th>세부사항</th>
+               </tr>
+               <tr>
+                   <td>현재</td>
+                   <td>동아대학교 경영정보학과 재학</td>
+                   <td>2학년</td>
+               </tr>
+               <tr>
+                   <td>21.6.18~21.7.25</td>
+                   <td>부산광역시 주최 공모전 출전</td>
+                   <td>장려상 수상</td>
+               </tr>
+               <tr>
+                   <td>20.5.25~20.7.3</td>
+                   <td>어깨동무 활동참여</td>
+                   <td>멘티</td>
+               </tr>
+           </table>
+        </div>
+         <br><br><br><br><br><br><br><br><br><br>
+        <div id="link">
+            <!--문서간의 이동-->
+            <a href="http://www.donga.ac.kr" target="_blank">동아대학교</a><br>
+            <a href="http://www.naver.com" target="_self">네이버</a><br>
+            <a href="start.html">start페이지이동</a><br>
+            <!--문서내 이동-->
+            <a href="#photo">사진으로 이동</a>
+        </div>
+        <div id="login">
+            <form action="#"method="get">
+                아이디 : <input type="text" name="name"> <br>
+                비밀번호 : <input type="password" name="pass" id="pass"> <br>
+                <input type="submit" value="확인">
+                <input type="reset" value="취소">
+            </form>
+        </div>
+    </section>
+    <footer> &copy; Seoyoung</footer>    
+</body>
+</html> 
