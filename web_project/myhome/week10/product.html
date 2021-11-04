@@ -66,11 +66,13 @@
         // data[i-행][0-열]
         // tr - 행/ th - 제목
 
-           function tablePrint(){
-            let data = [["홍길동", "./images/photo1.jpg", 5000],
+        let data = [["홍길동", "./images/photo1.jpg", 5000],
                     ["이순신", "./images/photo2.jpg", 10000],
                     ["성춘향", "./images/photo3.jpg", 15000],
                     ["최동원", "./images/photo4.jpg", 5000]]
+
+           function tablePrint(){
+            
             let text = '';
             text = `<table class="w3-table-all w3-hoverable"><tr><th>작가명</th><th>작품</th><th>가격</th></tr>`;
             for(let i =0; i <data.length; i++){
@@ -82,7 +84,7 @@
            function fileUpload(){
                let a = new Array();
                let author = document.getElementById("author").value;
-               let file = document.getElementById("file").files[0].name;
+               let file = "./images/" + document.getElementById("file").files[0].name;
                let price = parseInt(document.getElementById("price").value);
                a[0] = author;
                a[1] = file;
