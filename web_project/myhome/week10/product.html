@@ -79,6 +79,17 @@
             text += `</table>`;
              document.getElementById("productList").innerHTML=text;
            }
+           function fileUpload(){
+               let a = new Array();
+               let author = document.getElementById("author").value;
+               let file = document.getElementById("file").files[0].name;
+               let price = parseInt(document.getElementById("price").value);
+               a[0] = author;
+               a[1] = file;
+               a[2] = price;
+               data.push(a);
+               console.log(data);
+           }
     </script>
 </head>
 
@@ -113,6 +124,16 @@
             </div>
             </table>
         </div>
+        <hr>
+        <div class="w3-container">
+            <h2>  상품 등록</h2>
+            저자명 : <input class="w3-input" type="text" name="" id="author"> <br>
+            사진 : <input class="w3-input" type="file" name="" id="file"> <br>
+            가격 : <input class="w3-input" type="text" name="" id="price"> <br>
+            <button class= "w3-button w3-blue" onclick="fileUpload();"> 상품등록</button>
+            <button class= "w3-button w3-blue" onclick="tablePrint();"> 상품리스트</button>
+      </div>
+    
     </section>
 
 </body>
