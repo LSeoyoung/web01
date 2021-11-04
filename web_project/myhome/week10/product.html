@@ -61,10 +61,28 @@
            function w3_close(){
                document.getElementById("mySidebar").style.display = "none";
            }
+
+
+        // data[i-행][0-열]
+        // tr - 행/ th - 제목
+
+           function tablePrint(){
+            let data = [["홍길동", "./images/photo1.jpg", 5000],
+                    ["이순신", "./images/photo2.jpg", 10000],
+                    ["성춘향", "./images/photo3.jpg", 15000],
+                    ["최동원", "./images/photo4.jpg", 5000]]
+            let text = '';
+            text = `<table class="w3-table-all w3-hoverable"><tr><th>작가명</th><th>작품</th><th>가격</th></tr>`;
+            for(let i =0; i <data.length; i++){
+                text+=`<tr><td>${data[i][0]}</td><td><img src=${data[i][1]}></td><td>${data[i][2]}</td></tr>`;
+            }
+            text += `</table>`;
+             document.getElementById("productList").innerHTML=text;
+           }
     </script>
 </head>
 
-<body>
+<body onload="tablePrint();">
     <header>
         <!-- Sidebar -->
         <div class="w3-sidebar w3-bar-block	w3-border-right" style="display:none" id="mySidebar">
@@ -75,7 +93,7 @@
         </div>
         <div class="w3-indigo">
             <button class="w3-button w3-indigo w3-xlarge" onclick="w3_open()">☰</button>
-            <span class="w3-xlarge"> Seongwon Site</span>
+            <span class="w3-xlarge"> Seoyoung Site</span>
         </div>
 
     </header>
