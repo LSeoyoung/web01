@@ -96,11 +96,17 @@
            function onClick(element) {
 	            document.getElementById("img01").src = element.src;
 	            document.getElementById("modal01").style.display = "block";
-             } 
+           }
+
+           function popup(){
+            //window.open("팝업소스파일", "팝업별명","스타일설정")
+            window.open("ev.html", "event 11월", "width=700, height=900, scrollbars=yes, left=100, top=50");
+           }  
+            
     </script>
 </head>
 
-<body onload="tablePrint();">
+<body onload="tablePrint();popup();">
     <header>
         <!-- Sidebar -->
         <div class="w3-sidebar w3-bar-block	w3-border-right" style="display:none" id="mySidebar">
