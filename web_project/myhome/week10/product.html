@@ -76,7 +76,7 @@
             let text = '';
             text = `<table class="w3-table-all w3-hoverable"><tr><th>작가명</th><th>작품</th><th>가격</th></tr>`;
             for(let i =0; i <data.length; i++){
-                text+=`<tr><td>${data[i][0]}</td><td><img src=${data[i][1]}></td><td>${data[i][2]}</td></tr>`;
+                text+=`<tr><td>${data[i][0]}</td><td><img src=${data[i][1]} onclick="onClick(this)"></td><td>${data[i][2]}</td></tr>`;
             }
             text += `</table>`;
              document.getElementById("productList").innerHTML=text;
@@ -92,6 +92,11 @@
                data.push(a);
                console.log(data);
            }
+
+           function onClick(element) {
+	            document.getElementById("img01").src = element.src;
+	            document.getElementById("modal01").style.display = "block";
+             } 
     </script>
 </head>
 
@@ -135,6 +140,13 @@
             <button class= "w3-button w3-blue" onclick="fileUpload();"> 상품등록</button>
             <button class= "w3-button w3-blue" onclick="tablePrint();"> 상품리스트</button>
       </div>
+
+      <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+        <div class="w3-modal-content w3-animate-zoom">
+          <img id="img01" style="width:100%;">
+      </div>
+      </div>
+
     
     </section>
 
