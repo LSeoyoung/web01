@@ -5,10 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2017134 이서영(event handler)</title>
+    <style>
+        #test {
+            width: 200px;
+            height: 150px;
+            border: 1px solid gray;
+        }
+    </style>
+    <script>
+        function mover(e){
+            e.innerHTML = "안녕하세요~";
+            e.style.backgroundColor = "pink";
+        }
+        function mout(e){
+            e.innerHTML = "동아대학교 경영정보학과";
+            e.style.backgroundColor = "white";
+        }
+    </script>
 </head>
 <body>
     <p id="demo" onmouseover="this.style.backgroundColor='orange'; this.innerHTML = '안녕하세요';" onmouseout="this.style.backgroundColor='white';">
         2017134 이서영
     </p>
+    <div id="test" onmouseover="mover(this);" onmouseout="mout(this);">
+        동아대학교 경영정보학과 
+    </div>
 </body>
 </html>
