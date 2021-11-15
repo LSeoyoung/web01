@@ -26,9 +26,14 @@
         function init(){
             name = document.getElementById("fname");
             name.addEventListener("focus",bgcolor);
+            name.addEventListener("change",myfunc);
         }
         function bgcolor(){
             name.style.backgroundColor = "gray";
+        }
+        function myfunc(){
+            name.value = name.value.toUpperCase();
+            name.style.backgroundColor = "white";
         }
     </script>
 </head>
