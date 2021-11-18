@@ -29,6 +29,14 @@
             const ele = document.getElementById("cart");
             ele.appendChild(x);
         }
+
+        function cartRemove(e){
+            const x = document.getElementById(e);
+            const cart = document.getElementById("cart");
+            const list = document.getElementById("list");
+            cart.removeChild(x);
+            list.appendChild(x);
+        }
     </script>
     <style>
         #cart, #list{
