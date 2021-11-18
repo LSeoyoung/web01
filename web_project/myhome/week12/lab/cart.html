@@ -24,8 +24,20 @@
             ele.appendChild(list);
         }
 
+        function cartAppend(e){
+            const x = document.getElementById(e);
+            const ele = document.getElementById("cart");
+            ele.appendChild(x);
+        }
     </script>
-
+    <style>
+        #cart, #list{
+            display: flex;
+        }
+        #img1, #img2, #img3{
+            flex: 3;
+        }
+    </style>
 </head>
 <body>
     <h3>겨울방학때 하고 싶은 일</h3>
