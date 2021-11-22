@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let x ; 
+        function getLocation() {
+            x = document.getElementById("demo");
+             
+          if (navigator.geolocation) { //위치정보 객체
+            navigator.geolocation.getCurrentPosition(showPosition); //현재위치정보 리턴
+            //callback함수 : 다른함수에 매개변수로 넘겨준 함수, 매개변수로 넘겨받은 함수는 나중에 호출(call back)됨.
+          } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+          }
+        }
+        
+        function showPosition(position) {
+          x.innerHTML = "Latitude: " + position.coords.latitude +
+          "<br>Longitude: " + position.coords.longitude;
+        }
+        </script>
+</head>
+<body>
+    <button onclick="geolocation();">현재 위치 정보</button>
+    <div id="demo">
+
+    </div>
+
+</body>
+</html>
