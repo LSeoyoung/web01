@@ -16,37 +16,37 @@
     }
 
     let data = [["빈센트 반 고흐","./product/p1.PNG", 21000],
-                ["모네", "./product/p2.PNG", 19000],
-                ["폴고갱", "./product/p3.PNG", 20000],
-                ["피트 몬드리안", "./product/p4.PNG", 18000]]
+                    ["모네", "./product/p2.PNG", 19000],
+                    ["폴고갱", "./product/p3.PNG", 20000],
+                    ["피트 몬드리안", "./product/p4.PNG", 18000]]
 
-   function tablePrint(){
-    
-    let text ="";
-    text = `<table class="w3-table-all w3-hoverable"><tr class="w3-brown"><th>Product Image</th><th>Title</th><th>Price</th></tr>`;
-    for(let i = 0; i<data.length; i++){
-        text+=`<tr><td><img src=${data[i][0]} onclick="onClick(this)"></td><td>${data[i][1] }</td><td>${data[i][2]}</td></tr>`;
-    }
-    text += `</table>`;
-        document.getElementById("productList").innerHTML=text;
-   }
-   function fileUpload(){
-       let a = new Array();
-       let file = "./image/" + document.getElementById("file").files[0].name;
-       let title = document.getElementById("title").value;
-       let price = parseInt(document.getElementById("price").value);
-       
-       a[0] = file;
-       a[1] = title;
-       a[2] = price;
-       data.push(a);
-       console.log(data);
-   }
+           function tablePrint(){
+            
+            let text = '';
+            text = `<table class="w3-table-all w3-hoverable"><tr><th>작가명</th><th>작품</th><th>가격</th></tr>`;
+            for(let i =0; i <data.length; i++){
+                text+=`<tr><td>${data[i][0]}</td><td><img src=${data[i][1]} onclick="onClick(this)"></td><td>${data[i][2]}</td></tr>`;
+            }
+            text += `</table>`;
+             document.getElementById("productList").innerHTML=text;
+           }
+           function fileUpload(){
+               let a = new Array();
+               let author = document.getElementById("author").value;
+               let file = "./product/" + document.getElementById("file").files[0].name;
+               let price = parseInt(document.getElementById("price").value);
+               a[0] = author;
+               a[1] = file;
+               a[2] = price;
+               data.push(a);
+               console.log(data);
+           }
 
-   function onClick(element){
-        document.getElementById("img01").src=element.src;
-        document.getElementById("modal01").style.display="block";
-    }
+
+           function onClick(element) {
+	            document.getElementById("img01").src = element.src;
+	            document.getElementById("modal01").style.display = "block";
+           }
 </script>
 
 <style>
@@ -122,39 +122,21 @@
 </nav>
 
 <section>
-<!--<article>-->
-<div id="demo" class="w3-container">
-<h2 class="w3-text-brown"><b>Goods List</b></h2>
-<div style="border: 4px solid rgb(199, 184, 175)">
-<div id="productList">
+    <div class="w3-container">
+        <h3><b>상품을 직접 등록해보세요!</b></h3>
+        저자명 : <input class="w3-input" type="text" name="" id="author"> <br>
+        사진 : <input class="w3-input" type="file" name="" id="file"> <br>
+        가격 : <input class="w3-input" type="text" name="" id="price"> <br>
+        <button class= "w3-button w3-light-blue" onclick="fileUpload();"> 상품등록</button>
+        <button class= "w3-button w3-light-blue" onclick="tablePrint();"> 상품리스트</button>
+  </div>
 
-</div>
-</table>
-</div>
-</div>
-<!--</article>-->
-<br><br>
 
-<!--<article class="add" class="w3-row w3-large w3-margin-top">-->
-<div class="w3-container">
-<h2 class="w3-text-brown"><b>Product registration (상품등록)</b></h2>
-<div style="border: 4px solid rgb(199, 184, 175)">
-<div id="productadd">
-Product Image : <input class="w3-input" type="file" name="" id="file"> <br>
-Title : <input class="w3-input" type="text" name="" id="title"> <br>
-Price : <input class="w3-input" type="text" name="" id="price"> <br>
-<button class= "w3-button w3-round w3-brown" onclick="fileUpload();"> 상품등록</button>
-<button class= "w3-button w3-round w3-brown" onclick="tablePrint();"> 상품리스트</button>
-</div>
-</div>
-</div>
-<!--</article>-->
-
-<div id="modal01" class="w3-modal" onclick="this.style.display='none'">
-<div class="w3-modal-content w3-animate-zoom">
-<img id="img01" style="width:100%;">
-</div>
-</div>
+  <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+    <div class="w3-modal-content w3-animate-zoom">
+      <img id="img01" style="width:100%;">
+    </div>
+  </div>
 </section>
 <br><br><br>
 
