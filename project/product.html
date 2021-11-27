@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/w3.css">
+    <title>Having Art_세상의 모든 명화</title>
+<script>
+    function w3_open(){
+       document.getElementById("mySidebar").style.display = "block";
+    }
+    function w3_close(){
+       document.getElementById("mySidebar").style.display = "none";
+    }
+
+    let data = [["빈센트 반 고흐","./product/p1.PNG", 21000],
+                ["모네", "./product/p2.PNG", 19000],
+                ["폴고갱", "./product/p3.PNG", 20000],
+                ["피트 몬드리안", "./product/p4.PNG", 18000]]
+            
+            function tablePrint(){
+            
+            let text = '';
+            text = `<table class="w3-table-all w3-hoverable"><tr><th>작가명</th><th>작품</th><th>가격</th></tr>`;
+            for(let i =0; i <data.length; i++){
+                text+=`<tr><td>${data[i][0]}</td><td><img src=${data[i][1]} onclick="onClick(this)"></td><td>${data[i][2]}</td></tr>`;
+            }
+            text += `</table>`;
+             document.getElementById("productList").innerHTML=text;
+           }
+           function fileUpload(){
+               let a = new Array();
+               let author = document.getElementById("author").value;
+               let file = "./product/" + document.getElementById("file").files[0].name;
+               let price = parseInt(document.getElementById("price").value);
+               a[0] = author;
+               a[1] = file;
+               a[2] = price;
+               data.push(a);
+               console.log(data);
+           }
+
+
+           function onClick(element) {
+	            document.getElementById("img01").src = element.src;
+	            document.getElementById("modal01").style.display = "block";
+           }
+</script>
+
+<style>
+    body{
+        max-width: 950px;
+        margin:auto;
+    }
+    *{font-family:"나눔고딕",Arial, Helvetica, sans-serif ;}
+    header h1{display:inline;}
+    ul {list-style:none;}
+    a {text-decoration: none;}
+    nav ul {
+            text-align: center; border-top: 3px solid black;
+            border-bottom: 3px solid black ; padding: 18px 16px;
+
+    }
+    nav ul li {
+            display:inline;
+            padding: 20px 25px;
+            letter-spacing: 3px;
+    }
+
+    nav ul li:hover{
+            color: white;
+            background-color: rgb(200, 221, 231);
+    }
+    nav li a:hover{
+            color:white;
+    }
+
+</style>
+
+</head>
+<body onload="tablePrint();">
+<header>
+    <div class="w3-sidebar w3-bar-block	w3-border-right" style="display:none" id="mySidebar">
+        <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+        <a href="./cart.html" class="w3-bar-item w3-button">장바구니</a>
+        <a href="#" class="w3-bar-item w3-button">주문내역</a>
+        <a href="#" class="w3-bar-item w3-button">마이페이지</a>
+    </div>
+
+    <div>
+    <button class="w3-button  w3-xlarge" onclick="w3_open()">☰</button>
+    </div>
+    <div id="header">
+        <center>   
+            <a href="index.html"><h1 style="font-weight:700; text-shadow:3px 3px 0 rgb(200, 221, 231)" >Having Art</h1></a><br>
+            <h12>[세상의 모든 명화]</h12>
+        </center>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <b><li><a href="#Having art">Having art</a></li>
+        <li><a href="#Best">Best</a></li>
+        <li><a href="./artist.html">Artist</a></li>
+        <li><a href="./famouspainting.html">Famous Painting</a></li>
+        <li><a href="./product.html">New</a></li></b>
+    </ul>
+</nav>
+
+
+<section>
+    <div id="demo" class="w3-container">
+        <h3 class="w3-text-black" style="text-shadow:3px 3px 0 rgb(182, 183, 184)"><b>명화 리스트</b></h3>
+        <div style="border: 3px solid black">
+        <div id="productList">
+
+        </div>
+        </table>
+        </div>
+    </div>
+      
+    <div class="w3-container">
+        <h3 class="w3-text-black" style="text-shadow:3px 3px 0 rgb(182, 183, 184)"><b>작품을 직접 등록해보세요!</b></h3>
+        <div style="border: 3px solid black">
+        <div id="productadd">
+            저자명 : <input class="w3-input" type="text" name="" id="author"> <br>
+            사진 : <input class="w3-input" type="file" name="" id="file"> <br>
+            가격 : <input class="w3-input" type="text" name="" id="price"> <br>
+        <button class= "w3-button w3-light-gray" onclick="fileUpload();"> 작품등록</button>
+        <button class= "w3-button w3-light-gray" onclick="tablePrint();"> 작품리스트</button>
+        </div>
+        </div>
+    </div>
+
+    <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+        <div class="w3-modal-content w3-animate-zoom">
+        <img id="img01" style="width:100%;">
+        </div>
+    </div>
+</section>
+
+
+    <footer  class="w3-light-gray w3-margin-top"  style="height:155px;">
+        <div class="w3-row">
+            <div class="w3-col s6 w3-container">
+                <h4 id="Having art">Contact Center</h4>
+                <ul>
+                  <li style="font-size: 18px; font-weight: bold;">1533-9027</li>
+                  <li>fax : 02-9000-5376</li>
+                  <li>Email : blackeye1108@naver.com</li>
+                  <li>work : am09:00~pm18:00(Mon~Fri)</li>
+                </ul>
+                
+            </div>
+            <div class="w3-col s6  w3-container">
+                <h4> Follow us</h4>
+                <a href="https://www.instagram.com/_tjyom/"><i class="fa fa-instagram" aria-hidden="true" style="font-size:30px;color:black;"></i></a>
+                <i class="fa fa-twitter" aria-hidden="true" style="font-size:30px;color:black;"></i>
+                <i class="fa fa-facebook" aria-hidden="true" style="font-size:30px;color:black;"></i>
+                <br /><br/><br>
+                (주)해빙아트-대표이사 이서영<br/>
+            </div>
+        </div>
+      </footer>
+</body>
+</html>

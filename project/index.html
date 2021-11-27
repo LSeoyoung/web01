@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/w3.css">
+    <title>Having Art_세상의 모든 명화</title>
+    <script src="./js/start.js"></script>
+    <script>
+    function w3_open(){
+       document.getElementById("mySidebar").style.display = "block";
+    }
+    function w3_close(){
+       document.getElementById("mySidebar").style.display = "none";
+    }
+
+    function popup(){
+        //window.open("팝업소스파일", "팝업별명","스타일설정")
+        window.open("ev.html", "12월 세일", "width=400, height=400, scrollbars=yes, left=100, top=50");
+    }  
+    </script>
+    <style>
+        body{
+            max-width: 950px;
+            margin:auto;
+        }
+        section{
+            display: flex;
+        }
+        article{
+            flex: 3;
+        }  
+        aside{
+            flex:1;
+        }
+        nav{
+            flex:1;
+        }
+        *{font-family:"나눔고딕",Arial, Helvetica, sans-serif ;}
+        header h1{display:inline;}
+        ul {list-style:none;}
+        a {text-decoration: none;}
+        nav ul {
+                text-align: center; border-top: 3px solid black;
+                border-bottom: 3px solid black ; padding: 18px 16px;
+
+        }
+        nav ul li {
+                display:inline;
+                padding: 20px 25px;
+                letter-spacing: 3px;
+        }
+        
+        nav ul li:hover{
+            color: white;
+            background-color: rgb(200, 221, 231);
+        }
+        nav li a:hover{
+            color:white;
+        }
+
+
+        div.gallery {
+        margin: 5px;
+        border: 1px solid #ccc;
+        float: left;
+        width: 180px;
+        }
+
+        div.gallery:hover {
+        border: 1px solid #777;
+        }
+
+        div.gallery img {
+        width: 100%;
+        height: 100%;
+        }
+
+        div.desc {
+        padding: 15px;
+        text-align: center;
+        }
+
+        
+
+    </style>
+</head>
+<body onload="popup();">
+    <header>
+        <div class="w3-sidebar w3-bar-block	w3-border-right" style="display:none" id="mySidebar">
+            <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+            <a href="./cart.html" class="w3-bar-item w3-button">장바구니</a>
+            <a href="#" class="w3-bar-item w3-button">주문내역</a>
+            <a href="#" class="w3-bar-item w3-button">마이페이지</a>
+        </div>
+    
+        <div>
+        <button class="w3-button  w3-xlarge" onclick="w3_open()">☰</button>
+        </div>
+        <div id="header">
+            <center>   
+                <a href="index.html"><h1 style="font-weight:700; text-shadow:3px 3px 0 rgb(200, 221, 231)" >Having Art</h1></a><br>
+                <h12>[세상의 모든 명화]</h12>
+            </center>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <b><li><a href="#Having art">Having art</a></li>
+            <li><a href="#Best">Best</a></li>
+            <li><a href="./artist.html">Artist</a></li>
+            <li><a href="./famouspainting.html">Famous Painting</a></li>
+            <li><a href="./product.html">New</a></li></b>
+        </ul>
+    </nav>
+    <section class="w3-left w3-container w3-margin-top w3-margin-bottom" style="max-width:700px" >
+        <div class="w3-row">
+            <div class="w3-row">
+                <article class="media" class="w3-row w3-large w3-margin-top" style="font-style: italic;"><h5><b>영화 속 명화를 나의 집으로!</b></h5></article>
+                <hr>
+                <iframe width="645" height="365" src="https://www.youtube.com/embed/gN1xlR6kb4k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <br>
+
+            <div id="Best">
+                <article class="w3-row" class="w3-margin-top" style="font-style: italic;"><h4><b>Best Seller</b></h4></article>
+                <hr>
+                    <div class="gallery">
+                        <img src="./Painting/명화1.jpeg" alt="cafe" width="600" height="400" >
+                    </a>
+                    <div class="desc">밤의 카페 테라스(고흐) &#8361;31000</div>
+                    </div>
+
+                    <div class="gallery">
+                        <img src="./Painting/명화2.PNG" alt="cry" width="600" height="400" >
+                    </a>
+                    <div class="desc">절규(뭉크) <br> &#8361;35000</div>
+                    </div>
+
+                    <div class="gallery">
+                        <img src="./Painting/명화3.PNG" alt="boy" width="600" height="400">
+                    </a>
+                    <div class="desc">피리부는 소년(마네)<br> &#8361;31000</div>
+                    </div>
+
+
+        </div>
+    </section>
+
+    </section>
+
+    <aside class="right" class="w3-container w3-cell">
+        <h4 class="w3-text-black" style="font-weight:650;">Log In</h4>
+        <form id="login">
+                          ID: <input class="w3-input1" type="text" name="id" placeholder="아이디를 입력해주세요"/> <br/>
+                          Password: <input class="w3-input2" type="password" name="password" placeholder="비밀번호를 입력해주세요"/> <br/>
+                          <p>
+        <div>
+            <input class="w3-btn w3-round-xlarge w3-light-gray" type="submit" onclick="check(this.form)" value="Login"/>
+            <input class="w3-btn w3-round-xlarge w3-light-gray" type="reset" value="Cancel"/><br/><br>
+        </div>
+        </form>
+    <div class="info">
+        <div id="구매후기">
+               <h5 class="w3-text-black" style="font-weight:900;">구매후기</h5>
+                       <ul>
+                           <li><a href="https://m.post.naver.com/viewer/postView.nhn?volumeNo=4553255&memberNo=22025776" target="_blank">명화로 셀프인테리어</a><br></li>
+                           <li><a href="https://m.post.naver.com/viewer/postView.nhn?volumeNo=28948455&memberNo=981349" target="_blank">반고흐의 작품이 내 자취방에!</a><br></li>
+                           <li><a href="https://blog.naver.com/emblem00/222474450558" target="_self">명화 한점으로 분위기 있는 거실이 된,,,</a></li>
+                           <li><a href="#" target="_self">집에 들어가면 기분이 좋아져요^^</a></li>
+                       </ul>
+        </div>
+        <br>
+        <div id="post">
+              <h5 class="w3-text-black" style="font-weight:900;">커뮤니티</h5>
+                       <ul>
+                           <li><a href="#">공지사항</a></li>
+                           <li><a href="#">고객센터</a></li>
+                       </ul>
+            </div>
+        </div>
+    </aside>
+    
+    <div id="Sale">
+        <article class="package"> 
+            <h4 class="w3-large w3-container" style="font-style: italic;"><b>Discount event</b></h4>
+            <hr>
+            <table class="w3-table w3-bordered" >
+                <tr>
+                    <th><b>작가-명화이름</b></th>
+                    <th>원가</th>
+                    <th>할인가</th>
+                </tr>
+                <tr>
+                    <td>고흐-해바라기ll</td>
+                    <td>35,700</td>
+                    <td>25,000</td>
+                </tr>
+                <tr>
+                    <td>모네-수련</td>
+                    <td>36,500</td>
+                    <td>23,000</td>
+                </tr>
+                <tr>
+                    <td>고갱-화병</td>
+                    <td>39,200</td>
+                    <td>28,000</td>
+                </tr>
+            </table>
+        </article>
+    </div>
+
+    <footer  class="w3-light-gray w3-margin-top"  style="height:155px;">
+        <div class="w3-row">
+            <div class="w3-col s6 w3-container">
+                <h4 id="Having art">Contact Center</h4>
+                <ul>
+                  <li style="font-size: 18px; font-weight: bold;">1533-9027</li>
+                  <li>fax : 02-9000-5376</li>
+                  <li>Email : blackeye1108@naver.com</li>
+                  <li>work : am09:00~pm18:00(Mon~Fri)</li>
+                </ul>
+                
+            </div>
+            <div class="w3-col s6  w3-container">
+                <h4> Follow us</h4>
+                <a href="https://www.instagram.com/_tjyom/"><i class="fa fa-instagram" aria-hidden="true" style="font-size:30px;color:black;"></i></a>
+                <i class="fa fa-twitter" aria-hidden="true" style="font-size:30px;color:black;"></i>
+                <i class="fa fa-facebook" aria-hidden="true" style="font-size:30px;color:black;"></i>
+                <br /><br/><br>
+                (주)해빙아트-대표이사 이서영<br/>
+            </div>
+        </div>
+      </footer>
+</body>
+</html>
