@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/w3.css">
+    <title>Having Art_세상의 모든 명화</title>
+<script>
+    function w3_open(){
+       document.getElementById("mySidebar").style.display = "block";
+    }
+    function w3_close(){
+       document.getElementById("mySidebar").style.display = "none";
+    }
+
+
+    function cartAppend(e){
+        const x = document.getElementById(e);
+        const ele = document.getElementById("cart");
+        ele.appendChild(x);
+    }
+
+    function cartRemove(e){
+        const x = document.getElementById(e);
+        const list = document.getElementById("list");
+        const cart = document.getElementById("cart");
+        list.appendChild(x);
+        cart.removeChild(x);
+    }
+
+
+
+</script>
+
+<style>
+    body{
+        max-width: 950px;
+        margin:auto;
+    }
+    *{font-family:"나눔고딕",Arial, Helvetica, sans-serif ;}
+    header h1{display:inline;}
+    ul {list-style:none;}
+    a {text-decoration: none;}
+    nav ul {
+            text-align: center; border-top: 3px solid black;
+            border-bottom: 3px solid black ; padding: 18px 16px;
+
+    }
+    nav ul li {
+            display:inline;
+            padding: 20px 25px;
+            letter-spacing: 3px;
+    }
+
+    nav ul li:hover{
+            color: white;
+            background-color: rgb(200, 221, 231);
+    }
+    nav li a:hover{
+            color:white;
+    }
+
+    #list, #cart{
+            display: flex;
+    }
+    #img1, #img2, #img3, #img4, #img5{
+            flex: 3;
+    }
+
+</style>
+
+</head>
+<body>
+<header>
+    <div class="w3-sidebar w3-bar-block	w3-border-right" style="display:none" id="mySidebar">
+        <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+        <a href="./cart.html" class="w3-bar-item w3-button">장바구니</a>
+        <a href="#" class="w3-bar-item w3-button">주문내역</a>
+        <a href="#" class="w3-bar-item w3-button">마이페이지</a>
+    </div>
+
+    <div>
+    <button class="w3-button  w3-xlarge" onclick="w3_open()">☰</button>
+    </div>
+    <div id="header">
+        <center>   
+            <a href="index.html"><h1 style="font-weight:700; text-shadow:3px 3px 0 rgb(200, 221, 231)" >Having Art</h1></a><br>
+            <h12>[세상의 모든 명화]</h12>
+        </center>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <b><li><a href="#Having art">Having art</a></li>
+        <li><a href="#Best">Best</a></li>
+        <li><a href="./artist.html">Artist</a></li>
+        <li><a href="./famouspainting.html">Famous Painting</a></li>
+        <li><a href="./product.html">New</a></li></b>
+    </ul>
+</nav>
+
+<section>
+
+    <h4 class="w3-text-black" style="text-shadow:3px 3px 0 rgb(182, 183, 184)"><b>상품리스트</b></h4>
+    <div id="list" style="width: 100%; height: 255px; border: 1px solid gray;">
+        <div id="img1" >
+            <img src="./cart/cart1.PNG" width="150" height="150">
+            <div>
+              <p>사과나무(구스타프 클림트)<br>&#8361;29,000</p>
+              <button onclick="cartAppend('img1');">추가</button>
+              <button onclick="cartRemove('img1');">삭제</button>
+            </div>
+        </div>
+    
+        <div id="img2">
+            <img src="./cart/cart2.PNG" width="150" height="150">
+            <div>
+              <p>화병 속의 꽃(르누아르)<br>&#8361;37,000</p>
+              <button onclick="cartAppend('img2');">추가</button>
+              <button onclick="cartRemove('img2');">삭제</button>
+            </div>
+        </div>
+    
+        <div id="img3">
+            <img src="./cart/cart3.PNG" width="150" height="150">
+            <div >
+            <p>이카루스(앙리 마티스)<br>&#8361;51,000</p>
+              <button onclick="cartAppend('img3');">추가</button>
+              <button onclick="cartRemove('img3');">삭제</button>
+            </div>
+        </div>
+        
+        <div id="img4">
+            <img src="./cart/cart4.PNG" width="150" height="150">
+            <div >
+            <p>사과 바구니(폴세잔)<br>&#8361;36,100</p>
+              <button onclick="cartAppend('img4');">추가</button>
+              <button onclick="cartRemove('img4');">삭제</button>
+            </div>
+        </div>
+
+        <div id="img5">
+            <img src="./cart/cart5.PNG" width="150" height="150">
+            <div >
+            <p>길쌈(김홍도)<br>&#8361;38,300</p>
+              <button onclick="cartAppend('img5');">추가</button>
+              <button onclick="cartRemove('img5');">삭제</button>
+            </div>
+        </div>
+
+    </div>
+
+    <h4 class="w3-text-black" style="text-shadow:3px 3px 0 rgb(182, 183, 184)"><b>장바구니</b></h4>
+    <div id="cart" style="width: 100%; height: 255px; border: 1px solid gray;"></div>
+
+
+
+</section>
+
+    <footer  class="w3-light-gray w3-margin-top"  style="height:155px;">
+        <div class="w3-row">
+            <div class="w3-col s6 w3-container">
+                <h4 id="Having art">Contact Center</h4>
+                <ul>
+                  <li style="font-size: 18px; font-weight: bold;">1533-9027</li>
+                  <li>fax : 02-9000-5376</li>
+                  <li>Email : blackeye1108@naver.com</li>
+                  <li>work : am09:00~pm18:00(Mon~Fri)</li>
+                </ul>
+                
+            </div>
+            <div class="w3-col s6  w3-container">
+                <h4> Follow us</h4>
+                <a href="https://www.instagram.com/_tjyom/"><i class="fa fa-instagram" aria-hidden="true" style="font-size:30px;color:black;"></i></a>
+                <i class="fa fa-twitter" aria-hidden="true" style="font-size:30px;color:black;"></i>
+                <i class="fa fa-facebook" aria-hidden="true" style="font-size:30px;color:black;"></i>
+                <br /><br/><br>
+                (주)해빙아트-대표이사 이서영<br/>
+            </div>
+        </div>
+      </footer>
+</body>
+</html>

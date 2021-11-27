@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="w3.css">
+    <title>Document</title>
+    <script>
+        const liStyle = function(){
+            const liList = document.getElementsByTagName("li");
+            console.log(liList)
+            for(let i=0; i<liList.length; i++){
+                liList[i].style.color = "blue";
+            }
+        }
+
+        function funAppend(){
+            const list = document.createElement("li");
+            const work = document.getElementById("text").value;
+            const node = document.createTextNode(work);
+            list.appendChild(node);
+            const ele = document.getElementById("ol1");
+            ele.appendChild(list);
+        }
+
+        function cartAppend(e){
+            const x = document.getElementById(e);
+            const ele = document.getElementById("cart");
+            ele.appendChild(x);
+        }
+
+        function cartRemove(e){
+            const x = document.getElementById(e);
+            const cart = document.getElementById("cart");
+            const list = document.getElementById("list");
+            cart.removeChild(x);
+            list.appendChild(x);
+        }
+    </script>
+    <style>
+        #cart, #list{
+            display: flex;
+        }
+        #img1, #img2, #img3{
+            flex: 3;
+        }
+    </style>
+</head>
+<body>
+    <h3>겨울방학때 하고 싶은 일</h3>
+    <hr>
+    <ol id="ol1">
+        <li>제주도여행</li>
+        <li>사진배우기</li>
+        <li>영어공부하기</li>
+        <li>대회활동하기</li>
+    </ol>
+    <input id ="text" type="text" maxlength="40" ><br>
+    <button onclick="liStyle();"> 스타일</button>  
+    <button onclick="funAppend();"> 추가</button>
+    <br>
+
+    
+    <h2 class="w3-text-black" style="text-shadow:3px 3px 0 rgb(182, 183, 184)"><b>상품리스트</b></h2>
+    <div id="list" style="width: 700px; height: 255px; border: 1px solid gray;">
+        <div id="img1" >
+            <img src="./cart/cart1.PNG" width="150" height="150">
+            <div>
+              <p>사과나무(구스타프 클림트)<br>&#8361;29,000</p>
+              <button onclick="cartAppend('img1');">추가</button>
+              <button onclick="cartRemove('img1');">삭제</button>
+            </div>
+        </div>
+    
+        <div id="img2">
+            <img src="./cart/cart2.PNG" width="150" height="150">
+            <div>
+              <p>화병 속의 꽃(르누아르)<br>&#8361;37,000</p>
+              <button onclick="cartAppend('img2');">추가</button>
+              <button onclick="cartRemove('img2');">삭제</button>
+            </div>
+        </div>
+    
+        <div id="img3">
+            <img src="./cart/cart3.PNG" width="150" height="150">
+            <div >
+            <p>이카루스(앙리 마티스)<br>&#8361;51,000</p>
+              <button onclick="cartAppend('img3');">추가</button>
+              <button onclick="cartRemove('img3');">삭제</button>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="w3-text-black" style="text-shadow:3px 3px 0 rgb(182, 183, 184)"><b>장바구니</b></h2>
+    <div id="cart" style="width: 700px; height: 255px; border: 1px solid gray;"></div>
+
+</body>
+</html>
