@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="./css/w3.css">
     <title>Having Art_세상의 모든 명화</title>
     <script src="./js/start.js"></script>
+    <script>
+    function w3_open(){
+       document.getElementById("mySidebar").style.display = "block";
+    }
+    function w3_close(){
+       document.getElementById("mySidebar").style.display = "none";
+    }
+        
+    </script>
     <style>
         body{
             max-width: 950px;
@@ -51,10 +60,22 @@
 </head>
 <body>
     <header>
-        <center>   
-        <a href="index.html"><h1 style="font-weight:700; text-shadow:3px 3px 0 rgb(200, 221, 231);" >Having Art</h1></a><br>
-        <h12>[세상의 모든 명화]</h12>
-        </center>
+        <div class="w3-sidebar w3-bar-block	w3-border-right" style="display:none" id="mySidebar">
+            <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+            <a href="#" class="w3-bar-item w3-button">장바구니</a>
+            <a href="#" class="w3-bar-item w3-button">주문내역</a>
+            <a href="#" class="w3-bar-item w3-button">마이페이지</a>
+        </div>
+    
+        <div>
+        <button class="w3-button  w3-xlarge" onclick="w3_open()">☰</button>
+        </div>
+        <div id="header">
+            <center>   
+                <a href="index.html"><h1 style="font-weight:700; text-shadow:3px 3px 0 rgb(200, 221, 231)" >Having Art</h1></a><br>
+                <h12>[세상의 모든 명화]</h12>
+            </center>
+        </div>
     </header>
     <nav>
         <ul>
