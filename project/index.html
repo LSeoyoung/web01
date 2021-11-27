@@ -15,6 +15,11 @@
     function w3_close(){
        document.getElementById("mySidebar").style.display = "none";
     }
+
+    function popup(){
+        //window.open("팝업소스파일", "팝업별명","스타일설정")
+        window.open("ev.html", "12월 이벤트", "width=700, height=900, scrollbars=yes");
+    }  
     </script>
     <style>
         body{
@@ -57,7 +62,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="popup();">
     <header>
         <div class="w3-sidebar w3-bar-block	w3-border-right" style="display:none" id="mySidebar">
             <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
